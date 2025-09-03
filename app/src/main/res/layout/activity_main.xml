@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="230dp"
+        android:layout_height="834dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Personaje base -->
+
+                <!-- Gorra -->
+                <ImageView
+                    android:id="@+id/imageViewPlayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="725dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/player" />
+
+                <ImageView
+                    android:id="@+id/imageViewGorra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/gorro2"
+                    android:translationX="60dp"
+                    android:translationY="220dp"
+                    android:visibility="invisible" />
+
+                <!-- Chaqueta -->
+                <ImageView
+                    android:id="@+id/imageViewChaqueta"
+                    android:layout_width="101dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/chaqueta"
+                    android:translationX="73dp"
+                    android:translationY="325dp"
+                    android:visibility="invisible" />
+
+                <!-- Pantalón -->
+                <ImageView
+                    android:id="@+id/imageViewPantalon"
+                    android:layout_width="210dp"
+                    android:layout_height="67dp"
+                    android:src="@drawable/pantalon"
+                    android:translationX="10dp"
+                    android:translationY="395dp"
+                    android:visibility="invisible" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="261dp"
+        android:layout_height="843dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        tools:layout_editor_absoluteY="7dp">
+
+        <LinearLayout
+            android:layout_width="258dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="173dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Inventario de ropa Pokemon"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="158dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnGorra"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gorra" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarGorra"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="171dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnChaqueta"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="Chaqueta" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarChaqueta"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="176dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnPantalon"
+                        android:layout_width="186dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pantalon" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarPantalon"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

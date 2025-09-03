@@ -103,11 +103,12 @@
                     android:layout_height="158dp"
                     android:orientation="vertical">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnGorra"
                         android:layout_width="170dp"
                         android:layout_height="wrap_content"
-                        android:text="Gorra" />
+                        android:text="Gorra"
+                        android:background="@drawable/btn_descarga"/>
 
                     <ProgressBar
                         android:id="@+id/progressBarGorra"
@@ -123,11 +124,12 @@
                     android:layout_height="194dp"
                     android:orientation="vertical">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnChaqueta"
                         android:layout_width="170dp"
                         android:layout_height="wrap_content"
-                        android:text="Chaqueta" />
+                        android:text="Chaqueta"
+                        android:background="@drawable/btn_descarga"/>
 
                     <ProgressBar
                         android:id="@+id/progressBarChaqueta"
@@ -142,18 +144,20 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnPantalon"
                         android:layout_width="186dp"
                         android:layout_height="wrap_content"
-                        android:text="Pantalon" />
+                        android:text="Pantalon"
+                        android:background="@drawable/btn_descarga"/>
 
                     <ProgressBar
                         android:id="@+id/progressBarPantalon"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="184dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        />
                 </LinearLayout>
 
             </LinearLayout>

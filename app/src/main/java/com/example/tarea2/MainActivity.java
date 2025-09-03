@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnGorra, btnChaqueta, btnPantalon;
     private ProgressBar progressBarGorra, progressBarChaqueta, progressBarPantalon;
     private Handler handler;
+    // Botón para limpiar: al presionarlo oculta todas las prendas visibles
+    private Button btnLimpiar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
         // funciona para configurar los botones
         setupButtonListeners();
         
-
-
+ 
+ 
     }
-
-
+ 
+ 
     private void initializeViews() {
         // Conectamos cada ImageView  con la id del layout
         imageViewGorra = findViewById(R.id.imageViewGorra);
@@ -51,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
         btnGorra = findViewById(R.id.btnGorra);
         btnChaqueta = findViewById(R.id.btnChaqueta);
         btnPantalon = findViewById(R.id.btnPantalon);
+        // Intentamos obtener el botón Limpiar (puede no existir en todos los layouts)
+        btnLimpiar = findViewById(R.id.btnLimpiar); // puede ser null en portrait si no existe
         
-
+ 
         progressBarGorra = findViewById(R.id.progressBarGorra);
         progressBarChaqueta = findViewById(R.id.progressBarChaqueta);
         progressBarPantalon = findViewById(R.id.progressBarPantalon);
@@ -63,12 +67,22 @@ public class MainActivity extends AppCompatActivity {
         progressBarPantalon.setMax(100);
     }
 
-    // Función para configurar qué pasa cuando se presiona cada botón
     private void setupButtonListeners() {
         // Configuramos cada botón para que llame a la función de descarga con sus parámetros específicos
         btnGorra.setOnClickListener(v -> startDownload(progressBarGorra, btnGorra, imageViewGorra, "Gorra"));           // Botón gorra
         btnChaqueta.setOnClickListener(v -> startDownload(progressBarChaqueta, btnChaqueta, imageViewChaqueta, "Chaqueta")); // Botón chaqueta
         btnPantalon.setOnClickListener(v -> startDownload(progressBarPantalon, btnPantalon, imageViewPantalon, "Pantalón")); // Botón pantalón
+
+        // Botón Limpiar: si existe en el layout actual, al hacer click oculta todas las prendas
+        // Nota: usamos View.INVISIBLE para que mantengan su espacio en el contenedor (quedan ocultas)
+        if (btnLimpiar != null) { // evitamos NullPointerException en layouts donde no esté
+            btnLimpiar.setOnClickListener(v -> {
+                // Ocultamos gorra, chaqueta y pantalón
+                imageViewGorra.setVisibility(View.INVISIBLE);
+                imageViewChaqueta.setVisibility(View.INVISIBLE);
+                imageViewPantalon.setVisibility(View.INVISIBLE);
+            });
+        }
     }
 
     // Función principal que maneja la descarga de cualquier item

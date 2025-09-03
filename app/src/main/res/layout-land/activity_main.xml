@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <!-- Columna izquierda: personaje y prendas -->
+    <FrameLayout
+        android:id="@+id/leftPane"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <!-- Personaje base -->
+        <ImageView
+            android:id="@+id/imageViewPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/player" />
+
+        <!-- Gorra -->
+        <ImageView
+            android:id="@+id/imageViewGorra"
+            android:layout_width="144dp"
+            android:layout_height="116dp"
+            android:src="@drawable/gorro2"
+            android:translationX="80dp"
+            android:translationY="120dp"
+            android:visibility="invisible" />
+
+        <!-- Chaqueta -->
+        <ImageView
+            android:id="@+id/imageViewChaqueta"
+            android:layout_width="115dp"
+            android:layout_height="116dp"
+            android:src="@drawable/chaqueta"
+            android:translationX="105dp"
+            android:translationY="220dp"
+            android:visibility="invisible" />
+
+        <!-- Pantalón -->
+        <ImageView
+            android:id="@+id/imageViewPantalon"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pantalon"
+            android:translationX="10dp"
+            android:translationY="290dp"
+            android:visibility="visible" />
+    </FrameLayout>
+
+    <!-- Columna derecha: controles -->
+    <ScrollView
+        android:id="@+id/rightPane"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inventario de ropa Pokemon"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp" />
+
+            <!-- Fila Gorra -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <Button
+                    android:id="@+id/btnGorra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gorra" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarGorra"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!-- Fila Chaqueta -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <Button
+                    android:id="@+id/btnChaqueta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chaqueta" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarChaqueta"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!-- Fila Pantalón -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <Button
+                    android:id="@+id/btnPantalon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pantalon" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarPantalon"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
